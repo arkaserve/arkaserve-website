@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import NotFound from './pages/NotFound'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
+import Careers from './pages/Careers'
 
 function HomePage() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<TermsOfService />} />
+      <Route path="/careers" element={<Careers />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

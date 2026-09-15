@@ -128,7 +128,7 @@ export default function PrivacyPolicy() {
               </p>
               <div className="legal-contact-card">
                 <div><strong>Arkaserve</strong></div>
-                <div>Email: <a href="mailto:anil.mikkili@gmail.com">anil.mikkili@gmail.com</a></div>
+                <div>Email: <a href="mailto:arkaserve@gmail.com">arkaserve@gmail.com</a></div>
                 <div>Subject line: <em>"Privacy Request – [your name]"</em></div>
               </div>
               <p>We aim to respond within 5 business days.</p>

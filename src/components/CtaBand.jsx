@@ -7,8 +7,8 @@ export default function CtaBand() {
         <p>Explore our products or reach out to discuss a collaboration.</p>
         <div className="cta-acts">
           <a href="#products" className="btn btn-teal">See all products</a>
-          <a href="mailto:anil.mikkili@gmail.com" className="btn btn-ghost">
-            anil.mikkili@gmail.com
+          <a href="mailto:arkaserve@gmail.com" className="btn btn-ghost">
+            arkaserve@gmail.com
           </a>
         </div>
       </div>
