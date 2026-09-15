@@ -116,19 +116,22 @@ function JobCard({ job, onOpen }) {
 function JobModal({ job, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', github: '', why: '' })
   const [sent, setSent] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  function buildMessage() {
+    return `Subject: Application — ${job.title}\nTo: arkaserve@gmail.com\n\nHi Arkaserve Team,\n\nI'd like to apply for the ${job.title} role.\n\nName: ${form.name}\nEmail: ${form.email}\nGitHub / Portfolio: ${form.github || '—'}\n\nWhy I'm a great fit:\n${form.why}\n\nLooking forward to hearing from you!\n\nBest regards,\n${form.name}`
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
-    const subject = encodeURIComponent(`Application — ${job.title}`)
-    const body = encodeURIComponent(
-      `Hi Arkaserve Team,\n\nI'd like to apply for the ${job.title} role.\n\nName: ${form.name}\nEmail: ${form.email}\nGitHub / Portfolio: ${form.github}\n\nWhy I'm a fit:\n${form.why}\n\nLooking forward to hearing from you!\n\nBest regards,\n${form.name}`
-    )
-    // Gmail compose URL — opens a new compose window directly in the browser
-    window.open(
-      `https://mail.google.com/mail/?view=cm&to=arkaserve%40gmail.com&su=${subject}&body=${body}`,
-      '_blank'
-    )
     setSent(true)
+  }
+
+  function handleCopy() {
+    navigator.clipboard.writeText(buildMessage()).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2500)
+    })
   }
 
   return (
@@ -179,9 +182,24 @@ function JobModal({ job, onClose }) {
           {sent ? (
             <div className="career-sent">
               <div className="career-sent-icon">✓</div>
-              <h4>Application sent!</h4>
-              <p>Your email client opened with a pre-filled message to <strong>arkaserve@gmail.com</strong>. Please send it to complete your application. We'll get back to you within 5 business days.</p>
-              <button className="career-btn-outline" onClick={onClose}>Close</button>
+              <h4>Application ready!</h4>
+              <p>Your application has been prepared. Copy it below and send it from your email to <strong>arkaserve@gmail.com</strong>.</p>
+              <textarea
+                className="career-copy-box"
+                readOnly
+                rows={10}
+                value={buildMessage()}
+              />
+              <div className="career-sent-actions">
+                <button className="career-submit" style={{ '--job-color': job.color }} onClick={handleCopy}>
+                  {copied ? '✓ Copied!' : 'Copy Application'}
+                  {!copied && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>}
+                </button>
+                <div className="career-send-to">
+                  Then email it to: <strong>arkaserve@gmail.com</strong>
+                </div>
+                <button className="career-btn-outline" onClick={onClose}>Close</button>
+              </div>
             </div>
           ) : (
             <form className="career-form" onSubmit={handleSubmit}>
@@ -205,10 +223,10 @@ function JobModal({ job, onClose }) {
                 <textarea required rows={4} placeholder="Tell us about your relevant experience and what excites you about Arkaserve…" value={form.why} onChange={e => setForm({ ...form, why: e.target.value })} />
               </div>
               <button type="submit" className="career-submit" style={{ '--job-color': job.color }}>
-                Send Application
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Prepare Application
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
-              <p className="career-form-note">This opens your email client to send the application to arkaserve@gmail.com</p>
+              <p className="career-form-note">We'll prepare your application text — you copy it and send to arkaserve@gmail.com</p>
             </form>
           )}
         </div>

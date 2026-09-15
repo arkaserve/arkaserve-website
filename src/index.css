@@ -1468,7 +1468,22 @@ img { max-width: 100%; }
   color: var(--teal);
 }
 .career-sent h4 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); }
-.career-sent p { font-size: 0.88rem; color: var(--ink-2); line-height: 1.65; max-width: 360px; }
+.career-sent p { font-size: 0.88rem; color: var(--ink-2); line-height: 1.65; max-width: 400px; }
+.career-copy-box {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line-md);
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-family: 'Courier New', monospace;
+  color: var(--ink-2);
+  background: var(--bg);
+  resize: none;
+  outline: none;
+  line-height: 1.6;
+}
+.career-sent-actions { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+.career-send-to { font-size: 0.82rem; color: var(--ink-3); }
 
 /* Responsive */
 @media (max-width: 960px) {
