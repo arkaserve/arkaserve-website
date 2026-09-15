@@ -119,12 +119,15 @@ function JobModal({ job, onClose }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // Opens mail client with pre-filled body
     const subject = encodeURIComponent(`Application — ${job.title}`)
     const body = encodeURIComponent(
       `Hi Arkaserve Team,\n\nI'd like to apply for the ${job.title} role.\n\nName: ${form.name}\nEmail: ${form.email}\nGitHub / Portfolio: ${form.github}\n\nWhy I'm a fit:\n${form.why}\n\nLooking forward to hearing from you!\n\nBest regards,\n${form.name}`
     )
-    window.open(`mailto:arkaserve@gmail.com?subject=${subject}&body=${body}`)
+    // Gmail compose URL — opens a new compose window directly in the browser
+    window.open(
+      `https://mail.google.com/mail/?view=cm&to=arkaserve%40gmail.com&su=${subject}&body=${body}`,
+      '_blank'
+    )
     setSent(true)
   }
 
@@ -271,7 +274,7 @@ export default function Careers() {
         {/* General apply CTA */}
         <div className="careers-general">
           <p>Don't see the right role?</p>
-          <a href="mailto:arkaserve@gmail.com?subject=General Application — Arkaserve" className="careers-btn-outline">
+          <a href="https://mail.google.com/mail/?view=cm&to=arkaserve%40gmail.com&su=General%20Application%20%E2%80%94%20Arkaserve" target="_blank" rel="noopener noreferrer" className="careers-btn-outline">
             Send a general application →
           </a>
         </div>
