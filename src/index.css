@@ -753,7 +753,8 @@ img { max-width: 100%; }
   transform: translateY(-4px);
 }
 .pcard:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
-.pcard.feat { padding: 52px; }
+.pcard.feat { padding: 52px; grid-row: span 2; }
+.pcard.wide { grid-column: span 2; }
 
 .pcard-ico {
   width: 54px;
@@ -951,6 +952,38 @@ img { max-width: 100%; }
 }
 .cta-acts { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
+/* ── WHATSAPP FLOAT ────────────────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #25D366;
+  color: #fff;
+  padding: 13px 18px 13px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.40);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.wa-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+}
+.wa-float:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.wa-float-label { white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .wa-float { padding: 14px; border-radius: 50%; }
+  .wa-float-label { display: none; }
+}
+
 /* ── FOOTER ───────────────────────────────────────────── */
 .footer { background: #03080F; padding: 60px 6vw 36px; }
 .footer-top {
@@ -1027,6 +1060,8 @@ img { max-width: 100%; }
 /* ── RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 960px) {
   .pgrid { grid-template-columns: 1fr; }
+  .pcard.feat { grid-row: auto; }
+  .pcard.wide { grid-column: auto; }
   .about-inner { grid-template-columns: 1fr; gap: 52px; }
 }
 
@@ -1684,6 +1719,32 @@ img { max-width: 100%; }
 }
 
 /* Footer legal links */
+/* Social icons row in footer brand */
+.footer-social {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.46);
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.footer-social-link:hover {
+  background: rgba(0, 200, 164, 0.14);
+  border-color: rgba(0, 200, 164, 0.28);
+  color: var(--teal);
+}
+.footer-social-link:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
 .footer-legal-links {
   display: flex;
   gap: 10px;

@@ -41,6 +41,22 @@ function ProjectsIcon() {
   )
 }
 
+function WebDesignIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <rect x="2" y="4" width="24" height="18" rx="2.5" stroke="#00C8A4" strokeWidth="1.55" />
+      <line x1="2" y1="9.5" x2="26" y2="9.5" stroke="#00C8A4" strokeWidth="1.4" strokeLinecap="round" />
+      <circle cx="5.5" cy="6.8" r="1" fill="#00C8A4" />
+      <circle cx="8.5" cy="6.8" r="1" fill="#00C8A4" />
+      <circle cx="11.5" cy="6.8" r="1" fill="#00C8A4" />
+      <rect x="5" y="12.5" width="7" height="5" rx="1.5" stroke="#00C8A4" strokeWidth="1.2" opacity="0.65" />
+      <line x1="14" y1="13.5" x2="23" y2="13.5" stroke="#00C8A4" strokeWidth="1.2" strokeLinecap="round" opacity="0.55" />
+      <line x1="14" y1="16" x2="20" y2="16" stroke="#00C8A4" strokeWidth="1.2" strokeLinecap="round" opacity="0.4" />
+      <line x1="5" y1="20" x2="23" y2="20" stroke="#00C8A4" strokeWidth="1.2" strokeLinecap="round" opacity="0.3" />
+    </svg>
+  )
+}
+
 const PRODUCTS = [
   {
     id: 1,
@@ -73,10 +89,27 @@ const PRODUCTS = [
     type: 'Portfolio',
     name: 'Projects Hub',
     url: 'https://academicprojects.arkaserve.com',
-    desc: "A curated showcase of engineering work, open-source experiments, and in-progress builds — tracking what’s shipped and what’s in the pipeline.",
+    desc: "A curated showcase of engineering work, open-source experiments, and in-progress builds — tracking what's shipped and what's in the pipeline.",
     featured: false,
     icon: <ProjectsIcon />,
     num: '03',
+  },
+  {
+    id: 4,
+    type: 'Design & Development',
+    name: 'Website Designing',
+    url: 'https://arkaserve.com/#contact',
+    desc: 'Custom website design and development tailored to your brand. From landing pages to full web applications — clean, responsive, and built to convert visitors into customers.',
+    bullets: [
+      'Responsive design for all devices',
+      'Custom branding & UI/UX design',
+      'React, Next.js & modern tech stack',
+      'SEO-optimised, fast-loading pages',
+    ],
+    featured: false,
+    wide: true,
+    icon: <WebDesignIcon />,
+    num: '04',
   },
 ]
 
@@ -85,7 +118,7 @@ export default function Products() {
     <section className="products" id="products" aria-labelledby="prod-h2">
       <div className="sec-label">What we build</div>
       <h2 className="sec-h2" id="prod-h2">
-        Three products. One unified mission.
+        Four products. One unified mission.
       </h2>
 
       <div className="pgrid">
@@ -93,7 +126,7 @@ export default function Products() {
           <a
             key={p.id}
             href={p.url}
-            className={`pcard${p.featured ? ' feat' : ''}`}
+            className={`pcard${p.featured ? ' feat' : ''}${p.wide ? ' wide' : ''}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -107,7 +140,7 @@ export default function Products() {
               </ul>
             )}
             <div className="pcard-link">
-              Visit {p.name} <ArrowIcon />
+              {p.wide ? 'Get in touch' : `Visit ${p.name}`} <ArrowIcon />
             </div>
             <div className="pcard-num" aria-hidden="true">{p.num}</div>
           </a>

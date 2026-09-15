@@ -48,6 +48,22 @@ const APPS = [
       </svg>
     ),
   },
+  {
+    name: 'Web Design',
+    desc: 'Custom websites & web apps',
+    href: 'https://arkaserve.com/#contact',
+    color: '#60A5FA',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect x="1" y="1" width="26" height="26" rx="6" fill="rgba(96,165,250,0.12)" stroke="rgba(96,165,250,0.30)" strokeWidth="1.2"/>
+        <rect x="3" y="5" width="22" height="16" rx="2" fill="rgba(96,165,250,0.08)" stroke="rgba(96,165,250,0.30)" strokeWidth="0.9"/>
+        <line x1="3" y1="9" x2="25" y2="9" stroke="rgba(96,165,250,0.40)" strokeWidth="0.9"/>
+        <rect x="5" y="11" width="6" height="5" rx="1" fill="rgba(96,165,250,0.18)" stroke="rgba(96,165,250,0.45)" strokeWidth="0.8"/>
+        <line x1="13" y1="12.5" x2="22" y2="12.5" stroke="#60A5FA" opacity="0.7" strokeWidth="1.1"/>
+        <line x1="13" y1="15" x2="19" y2="15" stroke="#60A5FA" opacity="0.4" strokeWidth="1"/>
+      </svg>
+    ),
+  },
 ]
 
 function WaffleIcon() {
