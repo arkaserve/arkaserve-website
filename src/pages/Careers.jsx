@@ -119,7 +119,7 @@ function JobModal({ job, onClose }) {
   const [copied, setCopied] = useState(false)
 
   function buildMessage() {
-    return `Subject: Application — ${job.title}\nTo: arkaserve@gmail.com\n\nHi Arkaserve Team,\n\nI'd like to apply for the ${job.title} role.\n\nName: ${form.name}\nEmail: ${form.email}\nGitHub / Portfolio: ${form.github || '—'}\n\nWhy I'm a great fit:\n${form.why}\n\nLooking forward to hearing from you!\n\nBest regards,\n${form.name}`
+    return `Subject: Application — ${job.title}\nTo: support@arkaserve.com\n\nHi Arkaserve Team,\n\nI'd like to apply for the ${job.title} role.\n\nName: ${form.name}\nEmail: ${form.email}\nGitHub / Portfolio: ${form.github || '—'}\n\nWhy I'm a great fit:\n${form.why}\n\nLooking forward to hearing from you!\n\nBest regards,\n${form.name}`
   }
 
   function handleSubmit(e) {
@@ -183,7 +183,7 @@ function JobModal({ job, onClose }) {
             <div className="career-sent">
               <div className="career-sent-icon">✓</div>
               <h4>Application ready!</h4>
-              <p>Your application has been prepared. Copy it below and send it from your email to <strong>arkaserve@gmail.com</strong>.</p>
+              <p>Your application has been prepared. Copy it below and send it from your email to <strong>support@arkaserve.com</strong>.</p>
               <textarea
                 className="career-copy-box"
                 readOnly
@@ -196,7 +196,7 @@ function JobModal({ job, onClose }) {
                   {!copied && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>}
                 </button>
                 <div className="career-send-to">
-                  Then email it to: <strong>arkaserve@gmail.com</strong>
+                  Then email it to: <strong>support@arkaserve.com</strong>
                 </div>
                 <button className="career-btn-outline" onClick={onClose}>Close</button>
               </div>
@@ -226,7 +226,7 @@ function JobModal({ job, onClose }) {
                 Prepare Application
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
-              <p className="career-form-note">We'll prepare your application text — you copy it and send to arkaserve@gmail.com</p>
+              <p className="career-form-note">We'll prepare your application text — you copy it and send to support@arkaserve.com</p>
             </form>
           )}
         </div>
@@ -246,7 +246,7 @@ export default function Careers() {
         {/* Hero */}
         <div className="careers-hero">
           <div className="eyebrow">We're hiring</div>
-          <h1>Build the future<br />with Arkaserve</h1>
+          <h1>Build the future with Arkaserve</h1>
           <p className="careers-hero-sub">
             We're a small, focused team building digital products that serve real needs —
             exam prep, productivity tools, and student resources. Join us and own meaningful work from day one.
@@ -292,7 +292,7 @@ export default function Careers() {
         {/* General apply CTA */}
         <div className="careers-general">
           <p>Don't see the right role?</p>
-          <a href="https://mail.google.com/mail/?view=cm&to=arkaserve%40gmail.com&su=General%20Application%20%E2%80%94%20Arkaserve" target="_blank" rel="noopener noreferrer" className="careers-btn-outline">
+          <a href="https://mail.google.com/mail/?view=cm&to=support%40arkaserve.com&su=General%20Application%20%E2%80%94%20Arkaserve" target="_blank" rel="noopener noreferrer" className="careers-btn-outline">
             Send a general application →
           </a>
         </div>

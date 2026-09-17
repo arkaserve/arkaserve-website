@@ -129,12 +129,12 @@ export default function Nav() {
           <li><a href={`${p}#products`}>Products</a></li>
           <li><a href={`${p}#about`}>About</a></li>
           <li><Link to="/careers">Careers</Link></li>
-          <li><a href={`${p}#contact`}>Contact</a></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
 
         {/* Right group: CTA + ham */}
         <div className="nav-right">
-          <a href={`${p}#contact`} className="nav-cta">Get in touch</a>
+          <Link to="/contact" className="nav-cta">Get in touch</Link>
           <button
             className={`nav-ham${menuOpen ? ' open' : ''}`}
             onClick={() => setMenuOpen(o => !o)}
@@ -187,10 +187,10 @@ export default function Nav() {
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="2.2" stroke="currentColor" strokeWidth="1.3"/><path d="M3 13c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
                   About us
                 </a>
-                <a href={`${p}#contact`} className="nap-link-row" onClick={() => setAppsOpen(false)}>
+                <Link to="/contact" className="nap-link-row" onClick={() => setAppsOpen(false)}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M1.5 5l6.5 4.5L14.5 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
                   Contact
-                </a>
+                </Link>
                 <Link to="/careers" className="nap-link-row" onClick={() => setAppsOpen(false)}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="12" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M5 14h6M8 12v2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/><path d="M5 6h6M5 8.5h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                   Careers
@@ -220,8 +220,8 @@ export default function Nav() {
         <a href={`${p}#products`} onClick={closeMenu}>Products</a>
         <a href={`${p}#about`} onClick={closeMenu}>About</a>
         <Link to="/careers" onClick={closeMenu}>Careers</Link>
-        <a href={`${p}#contact`} onClick={closeMenu}>Contact</a>
-        <a href={`${p}#contact`} onClick={closeMenu}>Get in touch</a>
+        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        <Link to="/contact" onClick={closeMenu}>Get in touch</Link>
       </div>
     </>
   )

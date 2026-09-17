@@ -123,24 +123,6 @@ const PRODUCTS = [
     icon: <WebDesignIcon />,
     num: '04',
   },
-  {
-    id: 5,
-    type: 'School ERP · Live Demo',
-    name: 'School Management System',
-    url: '/school-management/index.html',
-    desc: 'A complete school ERP — track every student from day of admission: year-wise academics, attendance, fee history, extracurriculars, health records, and a full journey timeline. Built as a white-label solution for schools.',
-    bullets: [
-      'Full student history from day of joining',
-      'Academic records, grades & rank tracking',
-      'Attendance, fee & document management',
-      'Interactive demo — try it right now',
-    ],
-    featured: false,
-    icon: <SchoolIcon />,
-    num: '05',
-    label: 'Try Live Demo',
-    internal: true,
-  },
 ]
 
 export default function Products() {
@@ -148,7 +130,7 @@ export default function Products() {
     <section className="products" id="products" aria-labelledby="prod-h2">
       <div className="sec-label">What we build</div>
       <h2 className="sec-h2" id="prod-h2">
-        Five products. One unified mission.
+        Four products. One unified mission.
       </h2>
 
       <div className="pgrid">

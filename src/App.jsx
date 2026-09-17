@@ -4,11 +4,13 @@ import Hero from './components/Hero'
 import Products from './components/Products'
 import About from './components/About'
 import CtaBand from './components/CtaBand'
+import Clients from './components/Clients'
 import Footer from './components/Footer'
 import NotFound from './pages/NotFound'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import Careers from './pages/Careers'
+import Contact from './pages/Contact'
 
 function WhatsAppFloat() {
   return (
@@ -36,6 +38,7 @@ function HomePage() {
         <Products />
         <About />
         <CtaBand />
+        <Clients />
       </main>
       <Footer />
     </>
@@ -50,6 +53,7 @@ export default function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <WhatsAppFloat />
