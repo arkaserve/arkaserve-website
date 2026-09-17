@@ -1,41 +1,24 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
-
-async function fetchCount() {
-  try {
-    const res = await fetch(
-      'https://api.counterapi.dev/v1/arkaserve-com/visits/up',
-      { cache: 'no-store' }
-    )
-    if (!res.ok) throw new Error(res.status)
-    const d = await res.json()
-    return d.count ?? d.value ?? 0
-  } catch {
-    // dev / offline fallback — session-scoped local counter
-    const KEY = 'arks_vc', SES = 'arks_vs'
-    let n = parseInt(localStorage.getItem(KEY) || '0', 10)
-    if (!sessionStorage.getItem(SES)) {
-      n++
-      try { localStorage.setItem(KEY, n) } catch {}
-      try { sessionStorage.setItem(SES, '1') } catch {}
-    }
-    return n
-  }
-}
+import { pingVisit, fetchVisitorCount } from '../lib/supabaseVisitor'
 
 function VisitorCounter() {
   const [count, setCount] = useState(null)
-  useEffect(() => { fetchCount().then(setCount) }, [])
+
+  useEffect(() => {
+    pingVisit()
+    fetchVisitorCount().then(c => { if (c !== null) setCount(c) })
+  }, [])
+
   if (count === null) return null
   const digits = String(count).padStart(6, '0').split('')
   return (
     <div className="visitor-counter">
       <div className="visitor-digits">
-        {digits.map((d, i) => (
-          <span key={i} className="visitor-digit">{d}</span>
-        ))}
+        {digits.map((d, i) => <span key={i} className="visitor-digit">{d}</span>)}
       </div>
+      <span className="visitor-label">site visits</span>
     </div>
   )
 }

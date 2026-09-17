@@ -376,7 +376,7 @@ function SuccessScreen({ wo, name, onReset }) {
 /* ─── Main Contact Page ──────────────────────────────────────────────────────── */
 export default function Contact() {
   const [step,    setStep]    = useState(1)
-  const [wo]                  = useState(generateWO)   // stable across re-renders
+  const [wo]                  = useState(generateWO)
   const [sending, setSending] = useState(false)
   const [sent,    setSent]    = useState(false)
   const [sendErr, setSendErr] = useState(null)
@@ -399,7 +399,7 @@ export default function Contact() {
 
     const params = {
       wo_number:    wo,
-      name:         'Arkaserve Support',   // From Name in EmailJS template
+      name:         'Arkaserve Support',
       to_name:      form.name,
       to_email:     form.email,
       product:      product?.name || '',
@@ -412,7 +412,6 @@ export default function Contact() {
       reply_to:     'support@arkaserve.com',
     }
 
-    // If EmailJS is not configured, simulate success in dev mode
     if (!EJS.serviceId || !EJS.templateId || !EJS.publicKey) {
       console.warn('EmailJS not configured. In production, add VITE_EMAILJS_* env vars.')
       console.table(params)
@@ -444,60 +443,84 @@ export default function Contact() {
     <>
       <Nav />
       <main className="contact-page">
-        {/* Left panel */}
-        <div className="contact-left">
-          <div className="contact-left-inner">
-            <h1 className="contact-h1">Contact Us</h1>
-            <p className="contact-sub">
-              Report a problem, suggest a feature, or just say hello.
-              We read every message.
-            </p>
 
-            <div className="contact-info-cards">
-              <div className="contact-info-card">
-                <div className="contact-info-icon" style={{ background:'rgba(239,68,68,.10)' }}>
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1.5" y="3.5" width="15" height="11" rx="2" stroke="#ef4444" strokeWidth="1.4"/><path d="M1.5 6l7.5 5 7.5-5" stroke="#ef4444" strokeWidth="1.4" strokeLinecap="round"/></svg>
-                </div>
-                <div>
-                  <div className="contact-info-label">Email</div>
-                  <div className="contact-info-val">support@arkaserve.com</div>
-                </div>
-              </div>
-              <div className="contact-info-card">
-                <div className="contact-info-icon" style={{ background:'rgba(59,130,246,.10)' }}>
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#3b82f6" strokeWidth="1.4"/><path d="M9 5v4l2.5 2.5" stroke="#3b82f6" strokeWidth="1.4" strokeLinecap="round"/></svg>
-                </div>
-                <div>
-                  <div className="contact-info-label">Response time</div>
-                  <div className="contact-info-val">Within 1–2 business days</div>
-                </div>
-              </div>
-              <div className="contact-info-card">
-                <div className="contact-info-icon" style={{ background:'rgba(16,185,129,.10)' }}>
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C6.24 2 4 4.24 4 7c0 4.25 5 9 5 9s5-4.75 5-9c0-2.76-2.24-5-5-5z" stroke="#10b981" strokeWidth="1.4"/><circle cx="9" cy="7" r="1.8" stroke="#10b981" strokeWidth="1.3"/></svg>
-                </div>
-                <div>
-                  <div className="contact-info-label">Location</div>
-                  <div className="contact-info-val">Hyderabad, Telangana, India</div>
-                </div>
-              </div>
-              <a className="contact-info-card contact-wa-card"
-                href="https://wa.me/919866376367" target="_blank" rel="noopener noreferrer">
-                <div className="contact-info-icon" style={{ background:'rgba(37,211,102,.12)' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                </div>
-                <div>
-                  <div className="contact-info-label">WhatsApp (urgent)</div>
-                  <div className="contact-info-val">+91 98663 76367</div>
-                </div>
-              </a>
-            </div>
+        {/* ── Hero ── */}
+        <div className="contact-hero">
+          <div className="contact-hero-inner">
+            <div className="contact-hero-eyebrow">Get in Touch</div>
+            <h1 className="contact-hero-h1">Let's build something great together.</h1>
+            <p className="contact-hero-sub">
+              Report a bug, request a feature, or just say hello — we respond to every message.
+            </p>
           </div>
         </div>
 
-        {/* Right panel — wizard */}
-        <div className="contact-right">
-          <div className="cform-wrap">
+        {/* ── Content ── */}
+        <div className="contact-content">
+
+          {/* Left: contact info sidebar */}
+          <aside className="contact-info-panel">
+            <div className="contact-info-panel-title">Contact Info</div>
+            <div className="contact-info-items">
+
+              <div className="contact-info-item">
+                <div className="contact-info-item-icon" style={{ background:'rgba(239,68,68,.10)' }}>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <rect x="2" y="4" width="16" height="12" rx="2" stroke="#ef4444" strokeWidth="1.5"/>
+                    <path d="M2 7l8 5 8-5" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="contact-info-item-label">Email</div>
+                  <div className="contact-info-item-val">support@arkaserve.com</div>
+                </div>
+              </div>
+
+              <div className="contact-info-item">
+                <div className="contact-info-item-icon" style={{ background:'rgba(59,130,246,.10)' }}>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="7.5" stroke="#3b82f6" strokeWidth="1.5"/>
+                    <path d="M10 6v4.5l2.5 2.5" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="contact-info-item-label">Response Time</div>
+                  <div className="contact-info-item-val">Within 1–2 business days</div>
+                </div>
+              </div>
+
+              <div className="contact-info-item">
+                <div className="contact-info-item-icon" style={{ background:'rgba(16,185,129,.10)' }}>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 9 5 9s5-4.75 5-9c0-2.76-2.24-5-5-5z" stroke="#10b981" strokeWidth="1.5"/>
+                    <circle cx="10" cy="7" r="2" stroke="#10b981" strokeWidth="1.4"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="contact-info-item-label">Location</div>
+                  <div className="contact-info-item-val">Hyderabad, Telangana, India</div>
+                </div>
+              </div>
+
+              <div className="contact-info-divider" />
+
+              <a href="https://wa.me/919866376367" target="_blank" rel="noopener noreferrer"
+                className="contact-wa-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+            <p className="contact-info-availability">Available Mon–Sat · 10 am – 7 pm IST</p>
+          </aside>
+
+          {/* Right: form card */}
+          <div className="contact-form-card">
+            <div className="contact-form-card-header">
+              <div className="contact-form-card-title">Send us a message</div>
+              <div className="contact-form-card-sub">Fill in the form below and we'll get back to you shortly.</div>
+            </div>
             {sent ? (
               <SuccessScreen wo={wo} name={form.name} onReset={reset} />
             ) : (
@@ -510,6 +533,7 @@ export default function Contact() {
               </>
             )}
           </div>
+
         </div>
       </main>
       <Footer />
