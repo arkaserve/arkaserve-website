@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arkaserve School Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="logo">🏫</span>
+      <div>
+        <h1 id="school-name">School Management</h1>
+        <p id="school-sub">Loading…</p>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section">Main</div>
+      <a class="nav-link active" data-route="dashboard">
+        <span class="icon">📊</span> Dashboard
+      </a>
+
+      <div class="nav-section">Students</div>
+      <a class="nav-link" data-route="students">
+        <span class="icon">👨‍🎓</span> All Students
+      </a>
+      <a class="nav-link" data-route="add-student">
+        <span class="icon">➕</span> New Admission
+      </a>
+
+      <div class="nav-section">Staff</div>
+      <a class="nav-link" data-route="teachers">
+        <span class="icon">👨‍🏫</span> Teachers
+      </a>
+
+      <div class="nav-section">Analytics</div>
+      <a class="nav-link" data-route="reports">
+        <span class="icon">📈</span> Reports
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div style="font-size:11px;opacity:.7;">Arkaserve School SMS</div>
+      <div style="font-size:10px;opacity:.5;margin-top:2px;">© 2024 arkaserve.com</div>
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div class="overlay"></div>
+
+  <!-- ── Main ── -->
+  <div class="main">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div style="flex:1;">
+        <div class="topbar-title" id="page-title">Dashboard</div>
+        <span class="topbar-subtitle" id="page-subtitle">Overview of school activities</span>
+      </div>
+      <div class="topbar-actions">
+        <div style="text-align:right;font-size:12px;color:#64748b;margin-right:6px;">
+          <div style="font-weight:600;color:#1e293b;">Admin User</div>
+          <div>Principal Office</div>
+        </div>
+        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1a3c6e,#2563a8);
+                    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;">A</div>
+      </div>
+    </header>
+
+    <!-- Page Content (injected by JS) -->
+    <div id="main-content"></div>
+
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<!-- Scripts -->
+<script src="js/data.js"></script>
+<script src="js/views.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

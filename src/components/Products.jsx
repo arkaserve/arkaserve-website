@@ -41,6 +41,18 @@ function ProjectsIcon() {
   )
 }
 
+function SchoolIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M14 3L3 9l11 6 11-6-11-6z" stroke="#00C8A4" strokeWidth="1.55" strokeLinejoin="round" />
+      <path d="M3 9v7" stroke="#00C8A4" strokeWidth="1.55" strokeLinecap="round" />
+      <path d="M7 11.5v6a7 7 0 0014 0v-6" stroke="#00C8A4" strokeWidth="1.55" strokeLinecap="round" />
+      <circle cx="22" cy="22" r="4" stroke="#00C8A4" strokeWidth="1.3" />
+      <path d="M20.5 22l1 1 2-2" stroke="#00C8A4" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 function WebDesignIcon() {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
@@ -111,6 +123,24 @@ const PRODUCTS = [
     icon: <WebDesignIcon />,
     num: '04',
   },
+  {
+    id: 5,
+    type: 'School ERP · Live Demo',
+    name: 'School Management System',
+    url: '/school-management/index.html',
+    desc: 'A complete school ERP — track every student from day of admission: year-wise academics, attendance, fee history, extracurriculars, health records, and a full journey timeline. Built as a white-label solution for schools.',
+    bullets: [
+      'Full student history from day of joining',
+      'Academic records, grades & rank tracking',
+      'Attendance, fee & document management',
+      'Interactive demo — try it right now',
+    ],
+    featured: false,
+    icon: <SchoolIcon />,
+    num: '05',
+    label: 'Try Live Demo',
+    internal: true,
+  },
 ]
 
 export default function Products() {
@@ -118,7 +148,7 @@ export default function Products() {
     <section className="products" id="products" aria-labelledby="prod-h2">
       <div className="sec-label">What we build</div>
       <h2 className="sec-h2" id="prod-h2">
-        Four products. One unified mission.
+        Five products. One unified mission.
       </h2>
 
       <div className="pgrid">
@@ -127,8 +157,7 @@ export default function Products() {
             key={p.id}
             href={p.url}
             className={`pcard${p.featured ? ' feat' : ''}${p.wide ? ' wide' : ''}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(!p.internal && { target: '_blank', rel: 'noopener noreferrer' })}
           >
             <div className="pcard-ico">{p.icon}</div>
             <div className="pcard-type">{p.type}</div>
@@ -140,7 +169,7 @@ export default function Products() {
               </ul>
             )}
             <div className="pcard-link">
-              {p.wide ? 'Get in touch' : `Visit ${p.name}`} <ArrowIcon />
+              {p.label ?? (p.wide ? 'Get in touch' : `Visit ${p.name}`)} <ArrowIcon />
             </div>
             <div className="pcard-num" aria-hidden="true">{p.num}</div>
           </a>
