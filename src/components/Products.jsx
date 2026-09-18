@@ -100,7 +100,7 @@ const PRODUCTS = [
     id: 3,
     type: 'Portfolio',
     name: 'Projects Hub',
-    url: 'https://academicprojects.arkaserve.com',
+    url: 'https://projects.arkaserve.com',
     desc: "A curated showcase of engineering work, open-source experiments, and in-progress builds — tracking what's shipped and what's in the pipeline.",
     featured: false,
     icon: <ProjectsIcon />,

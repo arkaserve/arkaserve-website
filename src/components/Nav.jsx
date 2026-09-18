@@ -38,7 +38,7 @@ const APPS = [
   {
     name: 'Career Guide',
     desc: 'Projects, resume & API prep',
-    href: 'https://academicprojects.arkaserve.com',
+    href: 'https://projects.arkaserve.com',
     color: '#A78BFA',
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">

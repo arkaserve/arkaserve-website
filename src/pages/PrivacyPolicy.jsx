@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
               <p>
                 Arkaserve ("we", "our", "us") operates the following digital products: the MockTest exam-preparation
                 platform at <strong>mocktest.arkaserve.com</strong>, the PDF document services at{' '}
-                <strong>pdftools.arkaserve.com</strong>, and the Career Guide at academicprojects.arkaserve.com. This Privacy
+                <strong>pdftools.arkaserve.com</strong>, and the Career Guide at projects.arkaserve.com. This Privacy
                 Policy explains how we collect, use, and safeguard information when you use any of these services.
               </p>
               <p>
