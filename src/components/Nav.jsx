@@ -22,7 +22,7 @@ const APPS = [
   {
     name: 'PDF Tools',
     desc: '57+ document services',
-    href: 'https://pdftools.arkaserve.com',
+    href: 'https://tools.arkaserve.com',
     color: '#F7A84A',
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">

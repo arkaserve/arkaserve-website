@@ -62,7 +62,7 @@ export default function Footer() {
           <h5>Products</h5>
           <ul>
             <li><a href="https://mocktest.arkaserve.com" target="_blank" rel="noopener">MockTest Platform</a></li>
-            <li><a href="https://pdftools.arkaserve.com" target="_blank" rel="noopener">PDF Tools</a></li>
+            <li><a href="https://tools.arkaserve.com" target="_blank" rel="noopener">PDF Tools</a></li>
             <li><a href="https://projects.arkaserve.com" target="_blank" rel="noopener">Career Guide</a></li>
             <li><a href="https://arkaserve.com/#contact">Website Designing</a></li>
           </ul>

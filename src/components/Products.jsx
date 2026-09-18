@@ -90,7 +90,7 @@ const PRODUCTS = [
     id: 2,
     type: 'Productivity',
     name: 'PDF Tools',
-    url: 'https://pdftools.arkaserve.com',
+    url: 'https://tools.arkaserve.com',
     desc: 'Fast, browser-based PDF utilities — merge, split, compress, and convert documents without installation or uploading files to a third party.',
     featured: false,
     icon: <PdfIcon />,

@@ -61,7 +61,7 @@ export default function TermsOfService() {
               </p>
               <ul>
                 <li><strong>MockTest Platform</strong> — exam-preparation tools at mocktest.arkaserve.com</li>
-                <li><strong>PDF Tools</strong> — document processing utilities at pdftools.arkaserve.com</li>
+                <li><strong>PDF Tools</strong> — document processing utilities at tools.arkaserve.com</li>
                 <li><strong>Career Guide</strong> — free resources for final-year students: projects, resume prep, and company API test guides</li>
               </ul>
               <p>
