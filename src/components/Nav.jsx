@@ -6,7 +6,7 @@ const APPS = [
   {
     name: 'MockTest',
     desc: 'Exam preparation platform',
-    href: 'https://mocktest.arkaserve.com',
+    href: 'https://prep.arkaserve.com',
     color: '#00C8A4',
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">

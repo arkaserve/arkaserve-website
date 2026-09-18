@@ -74,7 +74,7 @@ const PRODUCTS = [
     id: 1,
     type: 'Exam Preparation',
     name: 'MockTest Platform',
-    url: 'https://mocktest.arkaserve.com',
+    url: 'https://prep.arkaserve.com',
     desc: 'A comprehensive online exam preparation engine for competitive banking, SSC, and insurance exams. AI-generated questions, timed tests, and performance analytics — built to simulate the real exam experience.',
     bullets: [
       'Banking, SSC & Insurance exam coverage',
